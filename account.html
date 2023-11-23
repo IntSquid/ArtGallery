@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Gallery</title>
+</head>
+<body>
+    <div id="navbar">
+        <img id="logo" src="ImageSrc/paintingIcon.png" alt="">
+        <p id="title" style="font-style: italic;">Interactive Art Gallery</p>
+        <a href="index.html">Explore</a>
+        <a href="submit.html">Submit</a>
+        <a href="account.html">Account</a>
+    </div>
+        <p>Create an Account for the website</p>
+        <div><br><input type="text" id="freeform" name="Name" placeholder="Username"></div>
+        <div><br><input type="text" id="freeform" name="Name" placeholder="Password *8+ characters*"></div>
+        <div><br><input type="text" id="freeform" name="Name" placeholder="Verify Password"></div>
+        <div><br><button onClick="location.href='index.html'">Submit</button></div>
+        
+</body>
+<style>  
+    body {
+        background-color: #12151B;
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+    li {   
+        list-style: none;
+    }
+    #star:hover {
+        content: url(ImageSrc/starFilled.png);
+    }
+    #freeform{
+        font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+        color: #f2f2f2;
+        font-weight: 200;
+        font-style: italic;   
+        background-color: #0A0B10;
+        border: thin solid #0E1016;
+        border-radius: 1px;
+    }
+    p {
+        font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;    
+        color: #f2f2f2;
+        font-weight: 200;
+        font-style: italic;
+    }
+    #file{
+        font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;    
+        color: #f2f2f2;
+        font-weight: 200;
+        font-style: italic;
+    }
+    button{
+        font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;    
+        color: #f2f2f2;
+        font-weight: 200;
+        font-style: italic;
+        padding: 0.5em;
+        background-color: #0A0B10;
+        border: thin solid #0A0B10;
+        border-radius: 1px;
+    }
+    button:hover {
+        border: thin solid #f2f2f2;
+    }
+    #txt{
+        font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;    
+        color: #f2f2f2;
+        font-weight: 200;
+        font-style: italic;
+    }
+    #file::file-selector-button {
+        font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;    
+        color: #f2f2f2;
+        font-weight: 200;
+        font-style: italic;
+        color: white;
+        padding: 0.5em;
+        background-color: #0A0B10;
+        border: thin solid #0E1016;
+        border-radius: 1px;
+    }
+    #file::file-selector-button:hover {       
+        border: thin solid #f2f2f2;
+    }
+    li div {
+            display:table-cell;
+            vertical-align:middle;
+            width:700px;
+            height: 400px;
+            
+        }
+    li div p {
+        position: absolute;
+        left: 550px;
+    }
+    
+    #blockContainer {
+        display: flex;
+        flex-direction: column;
+        border: 1px dashed white;
+        position: absolute;
+    }
+    #blockimage {
+        width: 480px;
+        position: absolute;
+    }
+    .blockleft p {
+        margin-left: 490px;
+    }
+   .blockleft #blockTitle {
+        font-size: 26px;
+    }
+    .blockleft #blockSubtext {
+        font-size: 14px;
+    }
+    .container {
+        display: flex;
+        align-items: center;
+        justify-content: center
+    }
+    #logo {
+        position: absolute;
+        padding-top: 20px;
+    }
+    #title {
+        font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+        font-size: 22px;
+        padding-top: 10px;
+        padding-left: 50px;
+        color: #f2f2f2;
+    }
+    #navbar {
+        overflow: hidden;
+        width: 120%;
+        height: 120%;
+        margin-top: -20px;
+        background-color: #0F1116;
+    }
+    #welcomeHeader {  
+        font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;    
+        color: #f2f2f2;
+        font-weight: 200;
+        font-style: italic;
+    }
+    #navbar a {
+        float: left;
+        display: block;
+        color: #f2f2f2;
+        font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+        text-align: right;
+        padding: 14px;
+        text-decoration: none;
+    }
+    #navbar a:hover {
+        font-style: italic;
+    }
+    
+    .content {
+        padding: 16px;
+    }
+
+    .sticky {
+        position: fixed;
+        top: 0;
+        width: 100%;
+    }
+
+    
+    .sticky + .content {
+        padding-top: 60px;
+    }
+
+    .imageBackground {
+        @supports (background-clip: text) or (-webkit-background-clip: text) {
+            background-image: 
+            url(ImageSrc/rainbow.gif);
+            filter: drop-shadow();
+            background-size: 110% auto;
+            background-position: center;
+            color: transparent;
+            -webkit-background-clip: text;
+            background-clip: text;
+        }
+    }
+
+    .gleam {
+        position: absolute;
+        color: #ffffff;
+        background: linear-gradient(to right, #525B70 0, white 60%, #525B70 10%,#5B647C 20%);
+        background-position: 0;
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        animation: gleam 10s infinite linear;
+        animation-fill-mode: forwards;
+        white-space: nowrap;
+    }
+
+    #nameSpan {
+        font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;    
+        color: #f2f2f2;
+        text-decoration: underline dotted;
+        font-style: oblique;
+    }
+    @keyframes gleam {
+        0% {
+            background-position: -40px;
+        }
+            
+        60% {
+            background-position: 300px;
+        }
+        100%{
+            background-position: 600px;
+        }
+    }
+   
+    
+</style>
+<script>
+    
+</script>
+</html>
